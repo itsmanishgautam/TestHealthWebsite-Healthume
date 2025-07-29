@@ -8,7 +8,7 @@ def bmi_calculator(request):
     height = None
     weight_unit = None
     height_unit = None
-
+ 
     if request.method == 'POST':
         try:
             # Get data from the form

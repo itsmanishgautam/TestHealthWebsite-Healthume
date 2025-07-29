@@ -19,7 +19,7 @@ DEBUG = True # Set to False in production
 ALLOWED_HOSTS = ['*']
  # In production, add your domain here, e.g., ['healthume.com', 'www.healthume.com']
 
-
+ 
 # Application definition
 
 INSTALLED_APPS = [

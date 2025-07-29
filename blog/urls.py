@@ -6,7 +6,7 @@ from . import views
 app_name = 'blog'  # namespace for reversing URLs like blog:post_list
 
 handler404 = 'blog.views.page_not_found'
-
+ 
 urlpatterns = [
     # ✅ Home page that shows featured/trending posts
     path('', views.home_page, name='home'),  

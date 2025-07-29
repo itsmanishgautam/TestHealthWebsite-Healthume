@@ -8,7 +8,7 @@ from django.db.models import Q # Used for search functionality
 def product_list(request):
     """
     Displays a list of all active shop products, with optional search and category filtering.
-    Includes pagination.
+    Includes pagination. 
     """
     # Start with all active products, ordered by name
     products = Product.objects.filter(is_active=True).order_by('name')

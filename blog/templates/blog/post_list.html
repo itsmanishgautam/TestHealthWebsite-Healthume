@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Articles
+{% if category %}- {{ category.name }}{% elif query %}- Search Results for "{{ query }}"{% endif %}
+{% endblock %}
+
+{% block content %}
+<h1 class="mb-4">
+    {% if category %}
+    {{ category.name }} Articles
+    {% else %}
+    All Articles
+    {% endif %}
+</h1>
+
+{# Search form #}
+<form action="{% url 'blog:post_list' %}" method="GET" class="mb-4">
+    <div class="input-group">
+        <input type="text" name="q" class="form-control" placeholder="Search articles..."
+            value="{{ query|default_if_none:'' }}">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </div>
+</form>
+
+{% if posts %}
+<div class="row">
+    {% for post in posts %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+            {% if post.image %}
+            <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}"
+                style="max-height:250px; object-fit:cover;">
+            {% endif %}
+            <div class="card-body d-flex flex-column">
+                <h5 class="card-title">
+                    {{ post.title }}
+                    {% if post.is_featured %}
+                    <span class="badge bg-warning">Featured</span>
+                    {% endif %}
+                </h5>
+                <p class="card-text">
+                    <small class="text-muted">
+                        Published on {{ post.published_date|date:"F d, Y" }}
+                    </small>
+                </p>
+                <p class="card-text">
+                    {# Use striptags and truncatewords to show a preview of the content #}
+                    {{ post.content|striptags|truncatewords:20 }}
+                </p>
+                <div class="mt-auto">
+                    <a href="{% url 'blog:post_detail' post.slug %}" class="btn btn-primary btn-sm">Read More</a>
+                    {% if post.category %}
+                    <a href="{% url 'blog:post_by_category' post.category.slug %}"
+                        class="btn btn-secondary btn-sm ms-2">
+                        {{ post.category.name }}
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{# Pagination controls #}
+{% if posts.has_other_pages %}
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        {% if posts.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ posts.previous_page_number }}{% if query %}&q={{ query }}{% endif %}">
+                Previous
+            </a>
+        </li>
+        {% endif %}
+        {% for i in posts.paginator.page_range %}
+        {% if posts.number == i %}
+        <li class="page-item active"><span class="page-link">{{ i }}</span></li>
+        {% else %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ i }}{% if query %}&q={{ query }}{% endif %}">{{ i }}</a>
+        </li>
+        {% endif %}
+        {% endfor %}
+        {% if posts.has_next %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ posts.next_page_number }}{% if query %}&q={{ query }}{% endif %}">
+                Next
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
+{% else %}
+<p>
+    No articles found
+    {% if category %}
+    in this category
+    {% elif query %}
+    matching your search "{{ query }}"
+    {% endif %}.
+</p>
+{% endif %}
+{% endblock %}

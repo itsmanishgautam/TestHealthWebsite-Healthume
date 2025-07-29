@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+
+{% block title %}BMI Calculator - Healthume | Accurate Body Mass Index Calculation{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center mb-4">BMI Calculator - Calculate Your Body Mass Index</h2>
+    <p class="text-center mb-4">Use our BMI calculator to easily calculate your Body Mass Index. This tool helps you understand your body composition and health status, guiding you toward a healthier lifestyle.</p>
+
+    <!-- BMI Calculator Form -->
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4 mb-4">
+            <form method="POST">
+                {% csrf_token %}
+
+                <!-- Weight Input -->
+                <div class="mb-3">
+                    <label for="weight" class="form-label">Weight</label>
+                    <div class="input-group">
+                        <input type="number" step="any" name="weight" id="weight" class="form-control" required
+                            placeholder="Enter weight">
+                        <select class="form-select" name="weight_unit" required>
+                            <option value="kg" selected>Kg</option>
+                            <option value="lbs">Pounds</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Height Input -->
+                <div class="mb-3">
+                    <label for="height" class="form-label">Height</label>
+                    <div class="input-group">
+                        <input type="number" step="any" name="height" id="height" class="form-control" required
+                            placeholder="Enter height">
+                        <select class="form-select" name="height_unit" required>
+                            <option value="ft" selected>Feet</option>
+                            <option value="cm">Centimeters</option>
+                            <option value="m">Meters</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Calculate Button -->
+                <button type="submit" class="btn btn-primary w-100">Calculate BMI</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- BMI Result in Columns -->
+    {% if bmi %}
+    <div class="row justify-content-center mb-4">
+        <div class="col-md-3 col-6">
+            <div class="alert alert-info">
+                <strong>Weight:</strong><br>
+                {{ weight }} {{ weight_unit }}
+            </div>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="alert alert-info">
+                <strong>Height:</strong><br>
+                {{ height }} {{ height_unit }}
+            </div>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="alert alert-info">
+                <strong>Your BMI:</strong><br>
+                {{ bmi }}
+            </div>
+        </div>
+        <div class="col-md-3 col-6">
+            <div class="alert alert-info">
+                <strong>Category:</strong><br>
+                {{ message }}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Error or Invalid Input -->
+    {% if message and not bmi %}
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="alert alert-danger">
+                <strong>{{ message }}</strong>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <p class="text-center mt-4">BMI, or Body Mass Index, is a simple method used to assess if you're in a healthy weight range for your height. Enter your weight and height in the calculator above to get an instant result.</p>
+</div>
+{% endblock %}

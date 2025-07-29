@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+
+{% block title %}Daily Calorie Calculator - Healthume | Calorie Counter for Accurate Intake{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="text-center mb-4">Daily Calorie Calculator - Find Your Calorie Needs</h2>
+    <p class="text-center mb-4">Use our calorie calculator to determine your daily calorie intake based on your age, gender, weight, height, and activity level. This calorie counter helps you make informed decisions about your diet and health.</p>
+
+    <!-- Calorie Calculator Form -->
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6 mb-4">
+            <form method="POST">
+                {% csrf_token %}
+                
+                <div class="row">
+                    <!-- Age Input -->
+                    <div class="col-md-6 mb-3">
+                        <label for="age" class="form-label">Age (in years):</label>
+                        <input type="number" name="age" id="age" class="form-control" required placeholder="Enter your age">
+                    </div>
+
+                    <!-- Gender Input -->
+                    <div class="col-md-6 mb-3">
+                        <label for="gender" class="form-label">Gender:</label>
+                        <select class="form-select" name="gender" required>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Weight Input -->
+                    <div class="col-md-6 mb-3">
+                        <label for="weight" class="form-label">Weight:</label>
+                        <div class="d-flex">
+                            <input type="number" step="any" name="weight" id="weight" class="form-control" required placeholder="Weight">
+                            <select class="form-select ms-2" name="weight_unit" id="weight_unit" required>
+                                <option value="kg">kg</option>
+                                <option value="lbs">lbs</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Height Input (Feet & Inches as Float) -->
+                    <div class="col-md-6 mb-3">
+                        <label for="height" class="form-label">Height (in feet):</label>
+                        <div class="d-flex">
+                            <input type="number" step="any" name="height" id="height" class="form-control" required placeholder="Height">
+                            <select class="form-select ms-2" name="height_unit" id="height_unit" required>
+                                <option value="cm">cm</option>
+                                <option value="ft_inch" selected>Feet & Inches</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Activity Level Input -->
+                    <div class="col-md-12 mb-3">
+                        <label for="activity_level" class="form-label">Activity Level:</label>
+                        <select class="form-select" name="activity_level" required>
+                            <option value="sedentary">Sedentary (little or no exercise)</option>
+                            <option value="light">Lightly Active (light exercise/sports 1-3 days/week)</option>
+                            <option value="moderate">Moderately Active (moderate exercise/sports 3-5 days/week)</option>
+                            <option value="active">Very Active (hard exercise/sports 6-7 days a week)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Calculate Button -->
+                <button type="submit" class="btn btn-primary w-100">Calculate Daily Calories</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Daily Calorie Result -->
+    {% if daily_calories %}
+    <div class="row justify-content-center">
+        <!-- Cols for each data point -->
+        <div class="col-md-3">
+            <div class="alert alert-info">
+                <h5><strong>Age:</strong></h5>
+                <p>{{ age }} years</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="alert alert-info">
+                <h5><strong>Gender:</strong></h5>
+                <p>{{ gender|title }}</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="alert alert-info">
+                <h5><strong>Weight:</strong></h5>
+                <p>{{ weight }} {{ weight_unit }}</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="alert alert-info">
+                <h5><strong>Height:</strong></h5>
+                <p>{{ height }} {{ height_unit }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row justify-content-center">
+        <!-- Cols for activity and calories -->
+        <div class="col-md-3">
+            <div class="alert alert-info">
+                <h5><strong>Activity Level:</strong></h5>
+                <p>{{ activity_level|title }}</p>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="alert alert-info">
+                <h5><strong>Daily Calorie Intake:</strong></h5>
+                <p>{{ daily_calories|floatformat:0 }} kcal</p>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Error or Invalid Input -->
+    {% if message %}
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4 mb-4">
+            <div class="alert alert-danger">
+                <strong>{{ message }}</strong>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+</div>
+{% endblock %}

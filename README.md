@@ -55,4 +55,4 @@
 
 ## 🏗️ Project Structure (Basic)
 
-> Assumes static HTML or headless CMS setup. Modify as needed for dynamic projects.
+> Assumes static HTML or headless CMS setup. Modify as needed for dynamic projects.<img width="1920" height="3025" alt="screencapture-127-0-0-1-8000-2025-07-29-16_41_31" src="https://github.com/user-attachments/assets/41394bc4-dc13-4bd6-9621-bec1d67f6d60" />

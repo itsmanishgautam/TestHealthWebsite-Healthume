@@ -1,15 +1,15 @@
-# 🌿 Healthume – Medically Reviewed Health & Wellness Platform
+# 🌿 healthoperator – Medically Reviewed Health & Wellness Platform
 
 **Last Updated:** July 29, 2025  
-**Live Website:** [https://healthume.com](https://healthume.com)  
+**Live Website:** [https://healthoperator.com](https://healthoperator.com)  
 **Status:** ✅ Published  
 **License:** MIT (unless proprietary content applies)
 
 ---
 
-## 📖 About Healthume
+## 📖 About healthoperator
 
-**Healthume** is a professionally curated digital platform dedicated to publishing medically reviewed, expert-verified health content to empower individuals to live healthier lives. From mental wellness and skincare to fitness, nutrition, and lifestyle improvements — Healthume simplifies complex health topics into accessible, actionable advice.
+**healthoperator** is a professionally curated digital platform dedicated to publishing medically reviewed, expert-verified health content to empower individuals to live healthier lives. From mental wellness and skincare to fitness, nutrition, and lifestyle improvements — healthoperator simplifies complex health topics into accessible, actionable advice.
 
 ---
 

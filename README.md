@@ -30,18 +30,6 @@
 
 ## 📰 Featured Articles
 
-| 🗓️ Date        | 📝 Title                                           | 📂 Category        |
-|----------------|----------------------------------------------------|--------------------|
-| July 28, 2025  | 10 Simple Tips for a Healthier Lifestyle           | Lifestyle          |
-| July 28, 2025  | Sleep Apnea: The Silent Nighttime Threat           | Lifestyle          |
-| July 28, 2025  | 25+ Effective Ways to Lose Weight                  | Nutrition          |
-| July 28, 2025  | The Power of Mindfulness: How to Reduce Stress     | Mental Health      |
-| July 27, 2025  | Skincare: A Complete Guide to Building a Routine   | Skin & Beauty      |
-| July 28, 2025  | Top 5 Superfoods You Need in Your Diet             | Nutrition          |
-| July 28, 2025  | The Science of Weight Gain and Loss                | Nutrition          |
-
----
-
 ## 🔍 Features
 
 - 🌐 SEO-optimized, mobile-first design

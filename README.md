@@ -1,15 +1,15 @@
-# 🌿 TestHealthWebsite – Medically Reviewed Health & Wellness Platform
+# 🌿 TestHealthWebsite – Medically Health & Wellness Platform
 ---
 
 ## 📖 About TestHealthWebsite
 
-**TestHealthWebsite** is a professionally curated digital platform dedicated to publishing medically reviewed, expert-verified health content to empower individuals to live healthier lives. From mental wellness and skincare to fitness, nutrition, and lifestyle improvements — TestHealthWebsite simplifies complex health topics into accessible, actionable advice.
+**TestHealthWebsite** is a professionally curated digital platform dedicated to publishing medically, expert-verified health content to empower individuals to live healthier lives. From mental wellness and skincare to fitness, nutrition, and lifestyle improvements — TestHealthWebsite simplifies complex health topics into accessible, actionable advice.
 
 ---
 
 ## 🩺 Key Highlights
 
-- ✅ Medically Reviewed & Expert Verified Articles  
+- ✅ Medical & Expert Verified Articles  
 - 📅 Regularly Updated Content  
 - 🔎 Searchable Library of Articles and Products  
 - 🧰 Tools for Health Management  

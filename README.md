@@ -1,15 +1,9 @@
-# 🌿 healthoperator – Medically Reviewed Health & Wellness Platform
-
-**Last Updated:** July 29, 2025  
-**Live Website:** [https://healthoperator.com](https://healthoperator.com)  
-**Status:** ✅ Published  
-**License:** MIT (unless proprietary content applies)
-
+# 🌿 TestHealthWebsite – Medically Reviewed Health & Wellness Platform
 ---
 
-## 📖 About healthoperator
+## 📖 About TestHealthWebsite
 
-**healthoperator** is a professionally curated digital platform dedicated to publishing medically reviewed, expert-verified health content to empower individuals to live healthier lives. From mental wellness and skincare to fitness, nutrition, and lifestyle improvements — healthoperator simplifies complex health topics into accessible, actionable advice.
+**TestHealthWebsite** is a professionally curated digital platform dedicated to publishing medically reviewed, expert-verified health content to empower individuals to live healthier lives. From mental wellness and skincare to fitness, nutrition, and lifestyle improvements — TestHealthWebsite simplifies complex health topics into accessible, actionable advice.
 
 ---
 

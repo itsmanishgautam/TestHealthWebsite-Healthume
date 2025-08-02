@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-@e1v5*#v(z9-0w@q0m2j3r0i2s5$y6y-s5x_u2h(n-d7%&l_d'
 DEBUG = True # Set to False in production
 
 ALLOWED_HOSTS = ['*']
- # In production, add your domain here, e.g., ['healthoperator.com', 'www.healthoperator.com']
+ # In production, add your domain here, e.g., ['TestHealthWebsite.com', 'www.TestHealthWebsite.com']
 
  
 # Application definition
@@ -43,7 +43,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'healthoperator.urls'
+ROOT_URLCONF = 'TestHealthWebsite.urls'
 
 TEMPLATES = [
     {
@@ -61,7 +61,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'healthoperator.wsgi.application'
+WSGI_APPLICATION = 'TestHealthWebsite.wsgi.application'
 
 
 # Database
